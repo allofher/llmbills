@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bill>
+  <id>S-204</id>
+  <title>An Act to amend the Customs Tariff (goods from Xinjiang)</title>
+  <shortTitle>Xinjiang Manufactured Goods Importation Prohibition Act</shortTitle>
+  <parliament>44th Parliament</parliament>
+  <session>1st session</session>
+  <dateRange>November 22, 2021 to January 6, 2025</dateRange>
+  <sponsor>Sen. Leo Housakos</sponsor>
+  <billType>Senate Public Bill</billType>
+  <currentStatus>At second reading in the Senate</currentStatus>
+  <content>
+    <section>
+      <title>Short Title</title>
+      <paragraph>1. This Act may be cited as the Xinjiang Manufactured Goods Importation Prohibition Act.</paragraph>
+    </section>
+    <section>
+      <title>Customs Tariff</title>
+      <paragraph>2. The Customs Tariff is amended by adding the following after section 136:</paragraph>
+      <subsection>
+        <title>Prohibited Imports</title>
+        <paragraph>136.1 Despite anything in this Act, the importation of goods manufactured or produced wholly or in part in the Xinjiang Uyghur Autonomous Region of the People's Republic of China is prohibited.</paragraph>
+      </subsection>
+    </section>
+  </content>
+</Bill>

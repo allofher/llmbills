@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Larry - Canadian Legislative Tracker</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="mx-auto max-w-7xl px-4 py-4">
+        <!-- Canadian-themed Header -->
+        <header class="mb-8 bg-white border-b border-red-600 shadow-sm">
+            <div class="flex items-center gap-2 py-3">
+                <i class="fas fa-leaf text-red-600"></i>
+                <h1 class="text-2xl font-bold">
+                    <span class="text-red-600">Legal</span>
+                    <span class="text-slate-900">Larry</span>
+                </h1>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-[1fr,300px]">
+            <!-- Main Content -->
+            {{ template "content" . }}
+
+            <!-- Sidebar Navigation -->
+            <aside class="space-y-6">
+                <div class="space-y-3">
+                    <h3 class="font-medium text-lg">Older Bills and More</h3>
+                    <nav class="space-y-2">
+                        <div>
+                            <a href="/bills" class="block w-full py-2 px-4 text-sm text-left hover:bg-slate-100 rounded">
+                                All Bills
+                            </a>
+                        </div>
+                        <div>
+                            <a href="/question-periods" class="block w-full py-2 px-4 text-sm text-left hover:bg-slate-100 rounded">
+                                Question Periods
+                            </a>
+                        </div>
+                        <div>
+                            <form class="flex gap-2 items-center" action="/search" method="get">
+                                <input type="text" name="q" placeholder="find a bill eg. S-204" class="h-8 text-sm flex-1 px-3 py-2 border rounded">
+                                <button type="submit" class="h-8 px-2 bg-transparent hover:bg-slate-100 rounded">
+                                    <i class="fas fa-search h-4 w-4"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-medium">Get an Email version of every house update!</h3>
+                    <form class="flex gap-2" action="/subscribe" method="post">
+                        <input type="email" name="email" placeholder="Enter your email" class="flex-1 px-3 py-2 border rounded">
+                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-medium">Buy us a coffee :)</h3>
+                    <div class="flex gap-2 justify-between">
+                        <a href="/donate?amount=5" class="px-3 py-2 border rounded hover:bg-slate-100 text-sm">
+                            <i class="fas fa-coffee mr-1"></i> $5
+                        </a>
+                        <a href="/donate?amount=10" class="px-3 py-2 border rounded hover:bg-slate-100 text-sm">
+                            <i class="fas fa-heart mr-1"></i> $10
+                        </a>
+                        <a href="/donate?amount=20" class="px-3 py-2 border rounded hover:bg-slate-100 text-sm">
+                            <i class="fas fa-star mr-1"></i> $20
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-sm text-slate-500">Made by me and my friend</div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

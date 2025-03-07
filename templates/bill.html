@@ -1,0 +1,55 @@
+{{ define "content" }}
+<main class="space-y-6">
+    <!-- Bill Information Card -->
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="flex items-start justify-between">
+                        <div class="space-y-1">
+                            <div class="text-sm text-slate-500">{{.Bill.Parliament}}, {{.Bill.Session}}</div>
+                            <h2 class="text-xl font-semibold">{{.Bill.ID}}</h2>
+                            <p class="text-sm text-slate-600">{{.Bill.DateRange}}</p>
+                        </div>
+                        <div class="rounded-md bg-yellow-50 px-2.5 py-1.5 text-xs text-yellow-800">
+                            Historical information
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 grid gap-4 text-sm md:grid-cols-3">
+                        <div>
+                            <div class="font-medium">Bill type</div>
+                            <div class="text-slate-600">{{.Bill.BillType}}</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Sponsor</div>
+                            <div class="text-slate-600">{{.Bill.Sponsor}}</div>
+                        </div>
+                        <div>
+                            <div class="font-medium">Current status</div>
+                            <div class="text-slate-600">{{.Bill.CurrentStatus}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Summary Section -->
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="text-blue-600">◆</span>
+                        <h2 class="font-medium">AI Summary</h2>
+                    </div>
+                    <p class="mt-4 text-slate-600">
+                        This is an AI summary of the changes proposed in the bill as it pertains to the associated acts. 
+                        I am just example text right now but a backend system will add functionality to this window
+		</p>
+                </div>
+
+                <!-- Bill Content -->
+                <div class="rounded-lg border bg-white p-6 shadow-sm">
+                    <h3 class="font-semibold mb-4">Bill Content (XML as PDF)</h3>
+                    <div class="flex flex-col items-center">
+                        <iframe src="/bill/pdf/{{.Bill.ID}}" width="100%" height="500px" style="border: none;"></iframe>
+                        <div class="mt-4 text-sm text-slate-500 text-center">
+                            <p>This PDF is rendered from an XML file. <a href="/bill/pdf/{{.Bill.ID}}" target="_blank" class="text-blue-600 hover:underline">Open in new tab</a></p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+{{ end }}
